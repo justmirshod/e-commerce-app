@@ -1,0 +1,35 @@
+<div class="basket">
+  <h4>Basket</h4>
+  {{#if notebooks.length}}
+    <table>
+      <thead>
+        <tr>
+          <th>Notebook</th>
+          <th>Count</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each notebooks}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{count}}</td>
+            <td>{{price}}</td>
+            <td><button class="btn remove" data-id={{id}}>Delete</button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div class="mt-2">
+      Price:
+      <span class="price">{{price}}</span>
+    </div>
+    <form action="/order" method="POST">
+      <button type="submit" class="btn mt-2">Order</button>
+    </form>
+  {{else}}
+    <h5>Basket is empty</h5>
+  {{/if}}
+</div>

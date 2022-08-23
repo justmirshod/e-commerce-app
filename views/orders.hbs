@@ -1,0 +1,35 @@
+<h3>My orders</h3>
+{{#if orders.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>User email</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each orders}}
+        <tr>
+          <td>{{user.name}}</td>
+          <td>{{user.userId.email}}</td>
+          <td>
+            {{#each notebooks}}
+              <p class=""><b>{{notebook.title}}</b>
+                (<span class="price">{{notebook.price}}</span>
+                x
+                {{count}})</p>
+            {{/each}}
+          </td>
+          <td class="price">{{price}}</td>
+          <td class="date">{{date}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+{{else}}
+  <p>Not found</p>
+{{/if}}

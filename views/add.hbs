@@ -1,0 +1,56 @@
+<h1>Add new notebooks</h1>
+
+{{#if error}}
+  <p>{{error}}</p>
+{{/if}}
+
+<form class="z-depth-4 f_control" action="/add" method="POST" novalidate>
+  <div class="input-field">
+    <input
+      id="title"
+      type="text"
+      class="validate"
+      required
+      name="title"
+      value="{{data.title}}"
+    />
+    <label for="title">Notebooks model</label>
+    <span class="helper-text" data-error="Enter notebook's model"></span>
+  </div>
+  <div class="input-field">
+    <input
+      id="price"
+      type="number"
+      class="validate"
+      required
+      name="price"
+      value="{{data.price}}"
+    />
+    <label for="price">Price</label>
+    <span class="helper-text" data-error="Enter notebook's price"></span>
+  </div>
+  <div class="input-field">
+    <input
+      id="img"
+      type="text"
+      class="validate"
+      required
+      name="img"
+      value="{{data.img}}"
+    />
+    <label for="img">Image URL</label>
+    <span class="helper-text" data-error="Enter image URL"></span>
+  </div>
+  <div class="input-field">
+    <textarea
+      id="descr"
+      class="materialize-textarea"
+      value="{{data.descr}}"
+      required
+      name="descr"
+    ></textarea>
+    <label for="descr">Description</label>
+    <span class="helper-text" data-error="Enter description"></span>
+  </div>
+  <button class="btn btn-primary">Add notebooks</button>
+</form>

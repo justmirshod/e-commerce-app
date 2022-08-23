@@ -1,0 +1,98 @@
+<div class="row auth">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s6"><a class="active" href="#login">Login</a></li>
+      <li class="tab col s6"><a href="#register">Register</a></li>
+    </ul>
+  </div>
+  <div id="login" class="col s6 offset-s3">
+    {{#if loginError}}
+      <p class="alert">{{loginError}}</p>
+    {{/if}}
+    {{#if passwordError}}
+      <p class="alert">{{passwordError}}</p>
+    {{/if}}
+    <h4>Login to your acount</h4>
+    <form
+      class="z-depth-4 f_control mt-2"
+      action="/auth/login"
+      method="POST"
+      novalidate
+    >
+      <div class="input-field">
+        <input id="email" type="email" class="validate" required name="email" />
+        <label for="email">Email</label>
+        <span class="helper-text" data-error="Enter Your Email"></span>
+      </div>
+      <div class="input-field">
+        <input
+          id="password"
+          type="password"
+          class="validate"
+          required
+          name="password"
+        />
+        <label for="password">Password</label>
+        <span class="helper-text" data-error="Enter Your Password"></span>
+      </div>
+
+      <button class="btn btn-primary">Log In</button>
+    </form>
+  </div>
+  <div id="register" class="col s6 offset-s3">
+    {{#if error}}
+      <p class="alert">{{error}}</p>
+    {{/if}}
+    <h4>Create account</h4>
+    <form
+      class="z-depth-4 f_control mt-2"
+      action="/auth/register"
+      method="POST"
+      novalidate
+    >
+      <div class="input-field">
+        <input id="name" type="text" class="validate" required name="name" />
+        <label for="name">Name</label>
+        <span class="helper-text" data-error="Enter Your Name"></span>
+      </div>
+      <div class="input-field">
+        <input
+          id="remail"
+          type="email"
+          class="validate"
+          required
+          name="email"
+        />
+        <label for="remail">Email</label>
+        <span class="helper-text" data-error="Enter Your Email"></span>
+      </div>
+      <div class="input-field">
+        <input
+          id="rpassword"
+          type="password"
+          class="validate"
+          required
+          name="password"
+        />
+        <label for="rpassword">Password</label>
+        <span class="helper-text" data-error="Enter Your Password"></span>
+      </div>
+      <div class="input-field">
+        <input
+          id="confirm"
+          type="password"
+          class="validate"
+          required
+          name="confirm"
+        />
+        <label for="confirm">Comfirmation</label>
+        <span
+          class="helper-text"
+          data-error="Enter Your Confirm Password"
+        ></span>
+      </div>
+
+      <button class="btn btn-primary">Register</button>
+    </form>
+  </div>
+</div>

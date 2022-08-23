@@ -1,0 +1,63 @@
+<h1>Edit notebook {{notebook.title}}</h1>
+
+<form
+  class="z-depth-4 f_control"
+  action="/notebooks/edit-notebook"
+  method="POST"
+>
+  <div class="input-field">
+    <input
+      id="title"
+      type="text"
+      class="validate"
+      required
+      name="title"
+      value="{{notebook.title}}"
+    />
+    <label for="title">Notebooks model</label>
+    <span class="helper-text" data-error="Enter notebook's model"></span>
+  </div>
+  <div class="input-field">
+    <input
+      id="price"
+      type="number"
+      class="validate"
+      required
+      name="price"
+      value="{{notebook.price}}"
+    />
+    <label for="price">Price</label>
+    <span class="helper-text" data-error="Enter notebook's price"></span>
+  </div>
+  <div class="input-field">
+    <input
+      id="img"
+      type="text"
+      class="validate"
+      required
+      name="img"
+      value="{{notebook.img}}"
+    />
+    <label for="img">Image URL</label>
+    <span class="helper-text" data-error="Enter image URL"></span>
+  </div>
+  <div class="input-field">
+    <textarea
+      id="descr"
+      type="text"
+      class="materialize-textarea"
+      required
+      name="descr"
+      value="{{notebook.descr}}"
+    ></textarea>
+    <label for="descr">Description</label>
+    <span class="helper-text" data-error="Enter description"></span>
+  </div>
+  <input type="hidden" name="id" value="{{notebook.id}}" />
+  <button class="btn btn-primary">Edit notebook</button>
+</form>
+
+<form action="/notebooks/remove" method="post">
+  <input type="hidden" name="id" value="{{notebook.id}}" />
+  <button class="btn red mt-2">Remove notebook</button>
+</form>
